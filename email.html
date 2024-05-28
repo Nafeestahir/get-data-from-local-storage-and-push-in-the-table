@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 span::before {
+            content: url(images/2.png);
+            position: absolute;
+            top: 29px;
+            left: -23px;
+        }
+
+        h1 span::after {
+            content: url(images/svg.png);
+            position: absolute;
+            top: -23px;
+        }
+
+        body {
+            font-family: 'Poppins';
+            background-image: url(images/bg_noise.png);
+            background-repeat: no-repeat;
+            background-position: top;
+            background-color: #ECEFF3;
+        }
+
+        @media screen and (max-width:600px) {
+            .container {
+                width: 100% !important;
+                max-width: 375px !important;
+                padding: 40px 12px 60px 13px !important;
+                margin: 0 auto !important;
+            }
+
+            .header-top h1 {
+                font-size: 32px !important;
+                padding: 0 0 56px !important;
+            }
+
+            .profile-view {
+                display: none !important;
+            }
+
+            .morgan-profile {
+                background-image: url(images/bg-res.png) !important;
+            }
+
+            .arrow {
+                display: block !important;
+            }
+
+            .Email-block {
+                flex-direction: column !important;
+                height: auto !important;
+            }
+
+            .Phone {
+                max-width: 100% !important;
+                margin-bottom: 12px !important;
+                flex-direction: row-reverse !important;
+            }
+
+            .content-block {
+                padding: 10px 0 10px 12px !important;
+            }
+
+            .email {
+                max-width: 100% !important;
+                flex-direction: row-reverse !important;
+            }
+
+            .Bento-card1-border {
+                
+                max-width: 100% !important;
+                margin-bottom: 16px !important;
+
+            }
+
+            .Bento-card1-border1 {
+                max-width: 100% !important;
+
+            }
+
+            .Email-wrapper {
+                flex-direction: column;
+                margin-bottom: 16px !important;
+            }
+
+            .Bento-card-border {
+                margin-bottom: 16px !important;
+            }
+
+            .Bento-card2 {
+                padding: 32px 16px 16px !important;
+            }
+
+            .Bento-card2-border {
+                max-width: 100% !important;
+            }
+
+            .licensed {
+                padding: 32px 16px 16px !important;
+            }
+
+            .Other-info {
+                margin-bottom: 40px !important;
+            }
+
+            .container-image {
+                min-height: 124px !important;
+                background-image: url(images/card_resume2.png) !important;
+
+            }
+
+            .image-block {
+                flex-direction: row-reverse !important;
+                height: 124px !important;
+
+            }
+
+            .morgan-wrapper {
+                padding: 61px 40px 55px !important;
+            }
+
+            .morgan-block {
+                margin-bottom: 38px !important;
+            }
+
+            .Bento-card {
+                padding: 22px 12px 12px !important;
+            }
+
+            .Bento-card2-border {
+                height: 96px !important;
+            }
+        }
+
+        /* if (shouldSwitch) {
+      
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    } */
+    </style>
+</head>
+
+<body onload="searchparams()">
+    <div class="container" style="width: 100%;max-width: 591px;padding:40px 21px 60px 30px;margin: 0 auto;">
+        <!-- header-top -->
+        <div class="header-top">
+            <h1 style="font-size: 40px; padding: 0 0 40px;text-align: center;">Hi Casey,<br>
+                you have <span style="position: relative;background: linear-gradient(rgb(69, 97, 245), rgb(179, 83, 237), rgb(79, 182, 247));
+               background-clip: text;
+                -webkit-text-fill-color: transparent;">new lead</span></h1>
+        </div>
+
+        <!-- morgan-block -->
+        <div class="morgan-block" style="margin-bottom: 34px;">
+            <!-- morgan-profile -->
+            <div class="morgan-profile"
+                style="background-image: url(images/Vector1.png);background-repeat: no-repeat;background-size: contain;margin-bottom: 12px;position: relative;height: 100%;min-height: 212px;">
+                <div class="arrow" style="display: none;position: absolute;right: 12px;top:12px;">
+                    <a href="#"> <img src="images/Vector.png"></a>
+                </div>
+                <div class="morgan-wrapper"
+                    style="display: flex;justify-content: space-between; align-items: flex-end;padding: 61px 40px 42px;">
+                    <div class="title">
+                        <h2 id="heading2" style="color:white; font-size: 40px;font-weight:600; line-height: 1.2;">Morgan
+                            <span style="color:#838085; display: block;"> Maxwell</span>
+                        </h2>
+                    </div>
+                    <div class="profile-view">
+                        <a href="#" style="font-size: 16px;font-weight: 600; color:white;display: flex;
+                        align-items: center;">View full profile <img src="images/Vector.png"> </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email-block -->
+            <div class="Email-block"
+                style="display: flex;justify-content: space-between;margin-bottom: 12px;height: 212px;">
+                <div class="Phone"
+                    style="width: 100%;
+            max-width: 264px;background-color: #4FD44C; border: 8px solid #BFF0BF;border-radius: 16px;display: flex;justify-content: space-between;flex-direction: column;">
+                    <div class="arrow-block" style="text-align: right;">
+                        <a href="#"> <img src="images/Vector.png" style="padding: 4px 4px 0 0;"></a>
+                    </div>
+                    <div class="content-block" style="padding: 0 0 12px 12px;">
+                        <a href="#" style="font-size: 16px;font-weight: 600;text-decoration: none; color: white;"> <img
+                                src="images/svg_phone.png"> <span style="display: block;" id="phone"> 239 555-0108
+                            </span> </a>
+                    </div>
+                </div>
+                <div class="email"
+                    style="width: 100%;
+            max-width: 264px;background-color: #28B7F2;border: 8px solid #93DBF9;border-radius: 16px;display: flex;justify-content: space-between;flex-direction: column;">
+                    <div class="arrow-block" style="text-align: right;">
+                        <a href="#"> <img src="images/Vector.png" style="padding: 4px 4px 0 0;"></a>
+                    </div>
+
+                    <div class="content-block" style="padding: 0 0 12px 12px;">
+                        <a href="" style="font-size: 16px;font-weight: 600;text-decoration: none; color: white;">
+                            <img src="images/svg_email.png"><span style="display: block"
+                                id="email">morganmaxwell@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- image-block -->
+            <div class="container-image"
+                style=" background-image: url(images/card_resume.png);background-repeat: no-repeat; background-size:contain;min-height: 212px; ">
+                <div class="image-block" style="display: flex;justify-content: space-between;flex-direction: column;height: 212px;
+                    ">
+                    <div class="arrow-block" style="text-align: right;">
+                        <a href="#"> <img src="images/Vector.png" style="    padding: 12px 12px 0 0"></a>
+                    </div>
+                    <div class="content-block" style="padding: 0  0  16px 16px">
+                        <img src="images/svg_resume 123.png">
+                        <p style="font-weight: 600; color: white;">View Resume</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other-info -->
+        <div class="Other-info" style="margin-bottom: 46px;">
+            <!-- title-top -->
+            <div class="title-top">
+                <p style="font-size: 16px;font-weight: 600;text-align: center; padding-bottom: 12px;">Other info</p>
+            </div>
+            <!-- Bento-card -->
+            <div class=" Bento-card-border"
+                style="background-image: linear-gradient(to left top, rgba(102, 162, 246, .4) 1%, rgba(97, 95, 244, .4) 99%); padding: 4px;background-color: #ECEFF3;border-radius: 16px;margin-bottom: 12px;">
+                <div class="Bento-card" style="padding: 24px 12px 12px;border-radius: 16px;background-color: #ECEFF3;">
+                    <p style="font-size: 16px;font-weight: 400;color:#95999A;">
+                        What is your #1 asset as a new real estate agent?
+                    </p>
+                    <p style="font-size: 16px;font-weight: 600;">I have broad experience in the real estate industry and
+                        a
+                        lot
+                        of area knowledge. I grew up in the area
+                        and have lived here for the last 34 years.</p>
+                </div>
+            </div>
+            <!--Bento-card1 -->
+            <div class="Bento-card1" style=" margin-bottom: 12px;">
+                <div class="Email-wrapper" style="display: flex; justify-content: space-between;margin-bottom: 12px;">
+                    <div class="Bento-card1-border" style=" background-image: linear-gradient(to left top, rgba(102, 162, 246, .4) 1%,
+                        rgba(97, 95, 244, .4) 99%); padding: 4px;background-color: #ECEFF3;border-radius:
+                        16px;width: 100%;max-width: 358px;">
+                        <div class="Day-card"
+                            style="padding: 24px 12px 12px;border-radius: 16px;background-color: #ECEFF3">
+                            <p style="font-size: 16px;font-weight: 400;color:#95999A;">When is the best time to contact
+                                you?
+                            </p>
+                            <p style="font-size: 16px;font-weight: 600;">Mondays: 12p-4p <br> Wednesday: 3p-6p <br>
+                                Saturday:
+                                all day
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Bento-card1-border1"
+                        style="width: 100%;
+                    max-width: 168px; background-image: linear-gradient(to left top, rgba(102, 162, 246, .4) 1%, rgba(97, 95, 244, .4) 99%); padding: 4px;background-color: #ECEFF3; border-radius: 16px;">
+                        <div class="licensed"
+                            style="padding: 28px 12px 12px ;border-radius: 16px;background-color: #ECEFF3;    display: flex;justify-content: end;flex-direction: column;height: 100%;">
+                            <p style="font-size: 16px;font-weight: 400;color:#95999A;">Licensed</p>
+                            <p style="font-size: 16px;font-weight: 600;"> Yes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bento-card2 -->
+            <div class="Bento-card2-border"
+                style="width: 100%;max-width: 168px; background-image: linear-gradient(to left top, rgba(102, 162, 246, .4) 1%, rgba(97, 95, 244, .4) 99%); padding: 4px;background-color: #ECEFF3; border-radius: 16px;height: 144px;">
+                <div class="Bento-card2"
+                    style="padding: 32px 16px 16px ; background-color: #ECEFF3;border-radius: 16px;display: flex;justify-content: end;flex-direction: column;height: 100%;">
+                    <p style="font-size: 16px;font-weight: 400;color:#95999A;">Location</p>
+                    <p id="location" style="font-size: 16px;font-weight: 600;"> Downtown</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- profile-block -->
+        <div class=" profile-block" style="padding: 40px 0;">
+            <div class="bttn" style="display: flex; justify-content: center; margin-bottom: 24px;align-items: center;">
+                <a href="#" style="text-decoration: none;font-weight: 600;color: white;background: linear-gradient(208deg, #000000, #0B0113, #3C3C3C);;padding: 14.5px 16px;border-radius: 8px;display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 297px;border: 5px solid #7B7B7B;">View
+                    full profile <img style="padding-left: 8px;" src="images/Vector.png"></a>
+            </div>
+            <div class="contact-btn" style="display: flex; justify-content: center;">
+                <a href=" #" style="font-weight: 600;color: #666666;font-size: 16px;display: flex;
+                align-items: center;">Add to contacts <img style="padding-left: 10px;"
+                        src="images/user-plus-2 1.png"></a>
+            </div>
+        </div>
+
+        <!-- Footer-block -->
+        <div class="footer-block" style="margin-top: 46px;">
+            <div style="width: 100%; max-width: 333px; margin: 0 auto; text-align: center;">
+                <div class="logo-block" style="    margin-bottom: 12px;">
+                    <img src="images/svg_Logo.png">
+                </div>
+                <p style="font-size: 12px;color: #717675; margin-bottom: 25px;">If you
+                    don’t
+                    want to receive this messages again, change your
+                    <a href="#" style="color: black;">notification
+                        settings.</a>
+                </p>
+                <div class="txt" style="font-size: 12px;">
+                    <p style="color: #717675">Made by <a href="" style="color: black;">Wright Brothers, Inc.</a></p>
+                    <p style="color: #717675">9173 Chesapeake Dr., San Diego, CA 92123</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

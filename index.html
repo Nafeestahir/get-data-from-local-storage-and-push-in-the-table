@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px;
+        }
+
+        .btn {
+            padding: 25px 0;
+            width: 150px;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: black;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 22%;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 17px;
+            border-radius: 10px;
+        }
+
+        button,
+        .anch {
+            margin-top: 10px;
+            padding: 7px;
+            border-radius: 10px;
+            width: 150px;
+        }
+
+        .anch {
+            font-size: 25px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        select {
+            font-size: 15px;
+            border: 2px solid;
+            border-radius: 5px;
+            width: 150px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>USERDATA</h1>
+    <form method="get" action="">
+        <label for="">Name:</label>
+        <input type="text" name="fname" placeholder="Enter your name" required>
+        <label for=""> Phone:</label>
+        <input type="text" name="phone" placeholder="Enter your Phone" required>
+        <label for="">Email:</label>
+        <input type="email" name="email" placeholder="Enter your Email" required>
+        <label for="">Location:</label>
+        <select name="location" id="select-location">
+            <option value="RWP">RWP</option>
+            <option value="DOWNTOWN">DOWNTOWN</option>
+            <option value="ISLD">ISL</option>
+        </select>
+        <input type="hidden" name="hide" value="">
+        <button>Submit Now</button>
+        <a class="anch" href="Table.html">View Table</a>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>

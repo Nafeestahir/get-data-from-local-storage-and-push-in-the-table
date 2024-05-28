@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Table</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        table {
+            width: 100%;
+            max-width: 75%;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 15px 5px;
+        }
+
+        th,
+        td {
+            font-size: 20px;
+        }
+
+
+        .btn {
+            padding: 15px 0;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: black;
+        }
+
+        form {
+            margin: 50px 0;
+        }
+
+        input {
+            border: 2px solid black;
+            font-size: 15px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e8e8e8
+        }
+
+        .select-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .select-box button {
+            margin-left: 14px;
+        }
+
+        .dropdown {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .items-controller {
+            display: flex;
+            align-content: center;
+            align-items: center;
+
+        }
+
+        select {
+            padding: 2px;
+            margin: 0 10px;
+            outline: none;
+            cursor: pointer;
+            background: transparent;
+        }
+
+
+
+        .bottom-field {
+            width: 100%;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pagination li {
+            list-style-type: none;
+            padding: 2px;
+            margin: 10px;
+            flex-shrink: 0;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        .pagination li.active {
+            background-color: #326daa;
+            color: white;
+            border-color: #326daa;
+        }
+
+        .pagination li a {
+            text-decoration: none;
+            padding: 3px 8px;
+            display: block;
+            font-size: 18px;
+        }
+
+        .form-page {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search Tabel Data</h1>
+        <div class="select-box">
+            <form action="">
+                <input type="text" id="Inputvalue" onkeyup="FilterFunction()" placeholder="Search...">
+                <input type="number" id="searchByPhone" onkeyup="searchFunc()" placeholder="Search By Phone...">
+
+                <select name="" id="search-option" onchange="FilterFunction()">
+                    <option value="ALL">ALL</option>
+                    <option value="RWP">RWP</option>
+                    <option value="DOWNTOWN">DOWNTOWN</option>
+                    <option value="ISLD">ISL</option>
+                </select>
+            </form>
+
+            <button onclick="sorting()">Sort in Ascending order</button>
+            <button onclick="SortinDescending()">Sort in Descending order</button>
+        </div>
+        <div class="dropdown">
+            <div class="items-controller">
+                <h3>show</h3>
+                <select id="itemperpage">
+                    <option value="05">05</option>
+                    <option value="04">04</option>
+                    <option value="08">08</option>
+                    <option value="10">10</option>
+                    <option value="05">05</option>
+                </select>
+                <h5>Per Page</h5>
+            </div>
+        </div>
+        <table id="Table-content">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email </th>
+                    <th>Location </th>
+                    <th>View Page</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tabelbody">
+            </tbody>
+        </table>
+
+        <div class="bottom-field">
+            <ul class="pagination">
+                <li class="prev"><a href="#" id="prev">&#139</a></li>
+                <!-- <li class="prev"><a href="#">01</a></li>
+                <li class="prev"><a href="#">02</a></li>
+                <li class="prev"><a href="#">03</a></li> -->
+                <li class="next"><a href="#" id="next">&#155</a></li>
+            </ul>
+        </div>
+        <div class="form-page">
+            <i class="fa-sharp fa-solid fa-arrow-left fa-lg"></i><a style="color: black;font-size: 23px;"
+                href="email.html">Form
+                Page</a>
+        </div>
+    </div>
+    <script>
+        function searchFunc() {
+            let fieldValue = document.getElementById("searchByPhone").value;
+            let tablebody = document.getElementById("Table-content");
+            let tableRow = tablebody.getElementsByTagName("tr");
+            for (let index = 1; index < tableRow.length; index++) {
+                let storeitem = tableRow[index].getElementsByTagName("td")[1]
+                if (storeitem) {
+                    product = storeitem.innerHTML;
+                    if (product.indexOf(fieldValue) > -1) {
+                        // storeitem.innerHTML;3
+                        tableRow[index].style.display = "";
+                    }
+                    else {
+                        tableRow[index].style.display = "none"
+                    }
+                }
+            }
+
+
+        }
+        function sorting() {
+            let table = document.getElementById("Table-content");
+            let rows = table.rows;
+            let x, y, z, i;
+            let conditon = true;
+            while (conditon) {
+                conditon = false;
+                for (i = 1; i < rows.length - 1; i++) {
+                    z = false;
+                    x = rows[i].getElementsByTagName("td")[1];
+                    y = rows[i + 1].getElementsByTagName("td")[1];
+
+                    if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                        z = true;
+                        break;
+                    }
+                }
+                if (z) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    conditon = true;
+                }
+            }
+        };
+        function SortinDescending() {
+            let table = document.getElementById("Table-content");
+            let rows = table.rows;
+            let x, y, z, i;
+            let conditon = true;
+            while (conditon) {
+                conditon = false;
+                for (i = 1; i < rows.length - 1; i++) {
+                    z = false;
+                    x = rows[i].getElementsByTagName("td")[1];
+                    y = rows[i + 1].getElementsByTagName("td")[1];
+
+                    if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                        z = true;
+                        break;
+                    }
+                }
+                if (z) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    conditon = true;
+                }
+            }
+        };
+
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
